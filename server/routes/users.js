@@ -1,4 +1,5 @@
 var express = require('express');
+const UserModel = require('../models/UserModel');
 var router = express.Router();
 
 /* GET users listing. */

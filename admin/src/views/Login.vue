@@ -58,7 +58,7 @@ const loginForm = reactive({
 const loginFormRef = ref()
 
 const loginRules = reactive({
-    name: [
+    username: [
         { required: true, message: 'Please input  name', trigger: 'blur' }
     ],
     password: [
@@ -76,11 +76,13 @@ const handleLogin = () => {
         console.log('valid',valid)
         if(valid){
             console.log('loginFrom',loginForm)
-            localStorage.setItem("token","springFlower")
-            axios.get("/users").then(res => {
+            // localStorage.setItem("token","springFlower")
+            axios.post("/adminapi/user/login",loginForm).then(res => {
                 console.log(res)
+            }).catch(e=>{
+                console.log('1')
             })
-            router.push("/index")
+            // router.push("/index")
         }
     })
 }

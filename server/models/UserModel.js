@@ -1,8 +1,6 @@
 const mongoose = require("mongoose")
-const Schema = magooose.Schema
-
+const Schema = mongoose.Schema
 // user模型===》users集合
-mongoose.model("user")
 
 const UserType = {
     username:String,
@@ -10,8 +8,8 @@ const UserType = {
     gender:Number,//性别
     introduction:String,
     avatar:String,
-    role:SVGAnimatedNumber
+    role:Number
 }
-mongoose.model("user",new Schema(UserType))
+const UserModel = mongoose.model("user",new Schema(UserType))
 
-module.exports = UsrModel
+module.exports = UserModel
