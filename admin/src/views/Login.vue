@@ -49,6 +49,7 @@
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
+import { ElMessage } from 'element-plus'
 
 const loginForm = reactive({
     username:"",
@@ -76,13 +77,18 @@ const handleLogin = () => {
         console.log('valid',valid)
         if(valid){
             console.log('loginFrom',loginForm)
-            // localStorage.setItem("token","springFlower")
             axios.post("/adminapi/user/login",loginForm).then(res => {
-                console.log(res)
+                // console.log(res)
+                if(res.data.ActionType === "OK"){
+                    router.push("/index")
+                    // localStorage.setItem("token","springFlower")
+                }else{
+                    ElMessage.error('用户名密码不匹配')
+                }
             }).catch(e=>{
                 console.log('1')
             })
-            // router.push("/index")
+            
         }
     })
 }
