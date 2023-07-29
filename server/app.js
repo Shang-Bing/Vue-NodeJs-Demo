@@ -32,17 +32,17 @@ app.use((req,res,next) => {
     return;
   }
   const token = req.headers["authorization"].split(" ")[1]
-  console.log('token',token)
+  // console.log('token',token)
   if(token){
     var payload = JWT.verify(token)
-    console.log('payload',payload)
+    // console.log('payload',payload)
     if(payload){
         const newToken = JWT.generate({
           _id:payload._id,
           username:payload.username
         },"1d")
         res.header("Authorization",newToken)
-        console.log('newtoken',newToken)
+        // console.log('newtoken',newToken)
         next()
     }else{
       res.status(401).send({errCode:"-1",errInfo:"token过期"})
