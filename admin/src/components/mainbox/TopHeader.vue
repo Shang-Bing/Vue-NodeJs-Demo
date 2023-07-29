@@ -8,7 +8,7 @@
             <span>SpringFlower</span>
         </div>
         <div class="right">
-            <span>欢迎admin回来</span>
+            <span>欢迎{{store.state.userInfo.username}}回来</span>
             <el-dropdown>
                 <span class="el-dropdown-link">
                 <el-icon :size = "20" color = "white"><User /></el-icon>
@@ -44,6 +44,8 @@ const handleCenter = () =>{
 }
 
 const handleLOgout = () =>{
+    localStorage.removeItem("token")
+    store.commit("clearUserInfo")
     router.push("/login")
 }
 </script>

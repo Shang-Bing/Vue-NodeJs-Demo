@@ -50,6 +50,9 @@ import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
+import { useStore } from 'vuex'
+
+const store = useStore()
 
 const loginForm = reactive({
     username:"",
@@ -80,6 +83,8 @@ const handleLogin = () => {
             axios.post("/adminapi/user/login",loginForm).then(res => {
                 // console.log(res)
                 if(res.data.ActionType === "OK"){
+                    console.log(res.data.data)
+                    store.commit("changeUserInfo",res.data.data)
                     router.push("/index")
                     // localStorage.setItem("token","springFlower")
                 }else{

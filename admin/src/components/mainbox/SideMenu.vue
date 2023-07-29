@@ -5,11 +5,11 @@
             :collapse-transition="false" 
             :router="true" 
             :default-active="route.fullPath">
-            <el-menu-item index="1">
+            <el-menu-item index="/index">
                 <el-icon><House /></el-icon>
                 <span>首页</span>
             </el-menu-item>
-            <el-menu-item index="2">
+            <el-menu-item index="/center">
                 <el-icon><Avatar /></el-icon>
                 <span>个人中心</span>
             </el-menu-item>
