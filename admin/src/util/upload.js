@@ -6,7 +6,7 @@ function upload(path, userForm){
         params.append(i,userForm[i])
     }
     // console.log(params)
-    return axios.post("/adminapi/user/upload",params,{
+    return axios.post(path,params,{
         headers:{
             "Content-Type" : "multipart/fprm-data"
         }

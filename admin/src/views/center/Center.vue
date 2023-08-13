@@ -43,7 +43,7 @@
                 </el-form-item>
                 <el-form-item>
                     <el-button type="primary" @click="handlesubmit">上传</el-button>
-            </el-form-item>
+                </el-form-item>
             </el-form>
             </el-col>
         </el-row>
@@ -107,20 +107,20 @@ const userFormRules = reactive({
   ],
   })
 //性别选择
-  const options = [
-      {
-          label:"保密",
-          value:0
-      },
-      {
-          label:"男",
-          value:1
-      },
-      {
-          label:"女",
-          value:2
-      }
-  ]
+const options = [
+    {
+        label:"保密",
+        value:0
+    },
+    {
+        label:"男",
+        value:1
+    },
+    {
+        label:"女",
+        value:2
+    }
+]
 </script>
 
 <style lang="scss" scoped>

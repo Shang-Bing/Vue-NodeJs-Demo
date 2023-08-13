@@ -18,8 +18,8 @@
                     <el-icon><UserFilled /></el-icon>
                     <span>用户管理</span>
                 </template>
-                <el-menu-item index="/user-manege/userAdd">添加用户</el-menu-item>
-                <el-menu-item index="/user-manege/userList">用户列表</el-menu-item>
+                <el-menu-item index="/user-manage/userAdd">添加用户</el-menu-item>
+                <el-menu-item index="/user-manage/userList">用户列表</el-menu-item>
             </el-sub-menu>
             <el-sub-menu index="4">
                 <template #title>

@@ -62,6 +62,35 @@ const UserController = {
             })
         }
         
+    },
+
+    add : async(req,res) => {
+        // console.log(req.body,req.file)
+        const {username, introduction,gender,role,password,} = req.body
+        const avatar = req.file ? `/avatarUploads/${req.file.filename}` : ""
+
+        // 调用userService模块更新数据
+        await UserService.add({username, introduction,gender:Number(gender),avatar,role:Number(role),password})
+        res.send({
+            ActionType:"OK",
+        })
+        
+    },
+
+    getList : async(req,res) => {
+        const result = await UserService.getList()
+        res.send({
+            ActionType:"OK",
+            data:result
+        })
+    },
+
+    deleteList : async(req,res) => {
+        console.log(req.params.id)
+        const result = await UserService.deleteList({_id:req.params.id})
+        res.send({
+            ActionType:"OK"
+        })
     }
 }
 

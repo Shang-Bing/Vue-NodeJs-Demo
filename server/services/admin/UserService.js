@@ -17,6 +17,17 @@ const UserService = {
                 username,introduction,gender
             })
         }
+    },
+    add:async({username,introduction,avatar,gender,password,role}) => {
+        return UserModel.create({
+            username,introduction,avatar,gender,password,role
+        })
+    },
+    getList:async() => {
+        return UserModel.find({},["username","role","avatar","introduction","gender"])
+    },
+    deleteList:async({_id}) => {
+        return UserModel.deleteOne({_id})
     }
 }
 

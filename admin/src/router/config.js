@@ -35,11 +35,11 @@ const routes = [
         component:ProductAdd
     },
     {
-        path:"/user-manege/userAdd",
+        path:"/user-manage/userAdd",
         component:UserAdd
     },
     {
-        path:"/user-manege/userList",
+        path:"/user-manage/userList",
         component:UserList
     }
 ]
